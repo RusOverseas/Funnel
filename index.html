@@ -1,734 +1,638 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rus Overseas Partnership Program</title>
+  <title>Experienced Tailor Vacancy | Rus Overseas</title>
+  <meta name="description" content="Bilingual job vacancy page for Experienced Tailor in Siberia, Russia by Rus Overseas." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --primary:#0f3d91;
-      --secondary:#e63946;
-      --accent:#f4f7fb;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --white:#ffffff;
-      --success:#0f766e;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:18px;
-      --max:1180px;
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3ff;
+      --text: #172033;
+      --muted: #5f6b85;
+      --primary: #0d6efd;
+      --primary-dark: #084298;
+      --accent: #17a2b8;
+      --success: #1f9d55;
+      --warning: #ffb703;
+      --border: #dbe4f0;
+      --shadow: 0 12px 30px rgba(13, 42, 82, 0.08);
+      --radius: 22px;
+      --radius-sm: 14px;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:#fff;
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{
-      width:min(92%, var(--max));
-      margin:0 auto;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .btn{
-      display:inline-block;
-      padding:14px 24px;
-      border-radius:999px;
-      font-weight:700;
-      transition:0.25s ease;
-      border:2px solid transparent;
-    }
-    .btn-primary{
-      background:var(--secondary);
-      color:#fff;
-    }
-    .btn-primary:hover{transform:translateY(-2px);opacity:.95}
-    .btn-outline{
-      background:transparent;
-      color:#fff;
-      border-color:#fff;
-    }
-    .btn-outline:hover{
-      background:#fff;
-      color:var(--primary);
-    }
-
-    .topbar{
-      background:var(--primary);
-      color:#fff;
-      padding:14px 0;
-      font-size:14px;
-    }
-    .topbar .wrap{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .hero{
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
       background:
-        linear-gradient(rgba(15,61,145,.78), rgba(15,61,145,.82)),
-        url('[images.unsplash.com](https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80)') center/cover no-repeat;
-      color:#fff;
-      padding:90px 0 80px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:40px;
-      align-items:center;
-    }
-    .eyebrow{
-      display:inline-block;
-      background:rgba(255,255,255,.12);
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.4px;
-      margin-bottom:18px;
-    }
-    .hero h1{
-      font-size:50px;
-      line-height:1.1;
-      margin:0 0 18px;
-    }
-    .hero p{
-      font-size:18px;
-      color:#eef4ff;
-      margin:0 0 28px;
-      max-width:700px;
-    }
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:22px;
-    }
-    .hero-points{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      font-size:15px;
-      color:#dbe7ff;
-    }
-    .hero-card{
-      background:rgba(255,255,255,.1);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-    .hero-card h3{
-      margin-top:0;
-      font-size:24px;
-    }
-    .hero-stat{
-      display:flex;
-      justify-content:space-between;
-      padding:12px 0;
-      border-bottom:1px solid rgba(255,255,255,.15);
-      font-size:15px;
-    }
-    .hero-stat:last-child{border-bottom:none}
-
-    section{
-      padding:70px 0;
-    }
-    .section-head{
-      text-align:center;
-      max-width:800px;
-      margin:0 auto 40px;
-    }
-    .section-head h2{
-      font-size:38px;
-      margin:0 0 12px;
-      color:var(--primary);
-    }
-    .section-head p{
-      color:var(--muted);
-      margin:0;
-      font-size:17px;
+        radial-gradient(circle at top right, rgba(13,110,253,0.10), transparent 22%),
+        linear-gradient(180deg, #f7faff 0%, #eef4ff 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .benefits{
-      background:var(--accent);
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-    }
-    .card{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:var(--shadow);
-      height:100%;
-    }
-    .icon{
-      width:52px;
-      height:52px;
-      border-radius:14px;
-      background:#eef4ff;
-      color:var(--primary);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-      margin-bottom:18px;
-    }
-    .card h3{
-      margin:0 0 12px;
-      font-size:22px;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .universities-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-    }
-    .uni-card{
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-    .uni-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
-    .uni-content{
-      padding:22px;
-    }
-    .uni-badge{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#eef4ff;
-      color:var(--primary);
-      font-size:12px;
-      font-weight:700;
-      margin-bottom:12px;
-    }
-    .uni-content h3{
-      margin:0 0 8px;
-      font-size:22px;
-      line-height:1.25;
-    }
-    .uni-location{
-      color:var(--success);
-      font-weight:700;
-      margin-bottom:10px;
-    }
-    .uni-content p{
-      color:var(--muted);
-      margin:0 0 14px;
-      font-size:15px;
-    }
-    .uni-fee{
-      font-weight:700;
-      color:var(--secondary);
-      margin-bottom:14px;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .process{
-      background:linear-gradient(180deg,#fff,#f8fbff);
-    }
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:20px;
-    }
-    .step{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:24px 18px;
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-    .step-num{
-      width:52px;
-      height:52px;
-      margin:0 auto 14px;
-      border-radius:50%;
-      background:var(--primary);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:20px;
+    .container {
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    .trust-strip{
-      background:var(--primary);
-      color:#fff;
-      border-radius:24px;
-      padding:34px;
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:20px;
-    }
-    .trust-item h3{
-      margin:0 0 8px;
-      font-size:26px;
-    }
-    .trust-item p{
-      margin:0;
-      color:#d7e4ff;
-      font-size:14px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid rgba(219,228,240,0.9);
     }
 
-    .form-section{
-      background:var(--accent);
-    }
-    .form-wrap{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:32px;
-      align-items:start;
-    }
-    .contact-card, .form-card{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-    .contact-list{
-      list-style:none;
-      padding:0;
-      margin:20px 0 0;
-    }
-    .contact-list li{
-      margin-bottom:14px;
-      color:var(--muted);
-    }
-    .contact-list strong{
-      color:var(--text);
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 16px;
     }
 
-    form{
-      display:grid;
-      gap:14px;
-    }
-    .row-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    input, select, textarea{
-      width:100%;
-      padding:14px 16px;
-      border:1px solid #d1d5db;
-      border-radius:12px;
-      font-size:15px;
-      outline:none;
-    }
-    input:focus, select:focus, textarea:focus{
-      border-color:var(--primary);
-      box-shadow:0 0 0 3px rgba(15,61,145,.12);
-    }
-    textarea{
-      min-height:130px;
-      resize:vertical;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--primary-dark);
     }
 
-    .footer{
-      background:#0b1d44;
-      color:#d8e2ff;
-      padding:26px 0;
-      font-size:14px;
-    }
-    .footer .wrap{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-      align-items:center;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-weight: 800;
+      box-shadow: var(--shadow);
     }
 
-    .disclaimer{
-      font-size:13px;
-      color:#6b7280;
-      background:#fff8e8;
-      border:1px solid #f6dca8;
-      padding:14px 16px;
-      border-radius:12px;
-      margin-top:18px;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 1024px){
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(13,110,253,0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13,110,253,0.08);
+      color: var(--primary-dark);
+      border: 1px solid rgba(13,110,253,0.10);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      color: #10213e;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 62ch;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,110,253,0.06), transparent 38%);
+      pointer-events: none;
+    }
+
+    .salary-box {
+      display: grid;
+      gap: 16px;
+    }
+
+    .salary-tag {
+      display: inline-block;
+      background: #e9f7ef;
+      color: var(--success);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      width: fit-content;
+    }
+
+    .salary-big {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #12284a;
+      line-height: 1.15;
+    }
+
+    .salary-sub {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .stats {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: var(--surface-2);
+      border: 1px solid #d8e4ff;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 24px;
+      color: var(--primary-dark);
+    }
+
+    .stat p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 26px 0 42px;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 3vw, 36px);
+      margin: 0 0 10px;
+      color: #10213e;
+    }
+
+    .section-sub {
+      margin: 0 0 26px;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: #17305b;
+      font-size: 22px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text);
+      background: #fafcff;
+      border: 1px solid #e6edf8;
+      padding: 14px 14px;
+      border-radius: 16px;
+    }
+
+    .list .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      flex: 0 0 30px;
+      display: grid;
+      place-items: center;
+      background: rgba(23,162,184,0.12);
+      color: var(--accent);
+      font-size: 16px;
+      margin-top: 1px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .benefit .emoji {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .benefit h4 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #17305b;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .highlight-banner {
+      background: linear-gradient(135deg, #0d6efd, #17a2b8);
+      color: #fff;
+      border-radius: 26px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: 0 16px 34px rgba(13,110,253,0.25);
+    }
+
+    .highlight-banner h3 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.15;
+    }
+
+    .highlight-banner p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .badge-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    .soft-badge {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 34px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h3 {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 34px);
+      color: #10213e;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto 22px;
+    }
+
+    .footer {
+      padding: 18px 0 40px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    @media (max-width: 900px) {
       .hero-grid,
-      .form-wrap{
-        grid-template-columns:1fr;
+      .grid-2,
+      .highlight-banner,
+      .benefits-grid {
+        grid-template-columns: 1fr;
       }
-      .grid-3,
-      .universities-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-      .steps{
-        grid-template-columns:repeat(2, 1fr);
-      }
-      .trust-strip{
-        grid-template-columns:repeat(2, 1fr);
-      }
-      .hero h1{
-        font-size:40px;
-      }
-    }
 
-    @media (max-width: 640px){
-      .grid-3,
-      .universities-grid,
-      .steps,
-      .trust-strip,
-      .row-2{
-        grid-template-columns:1fr;
+      .stats {
+        grid-template-columns: 1fr;
       }
-      .hero{
-        padding:70px 0 60px;
-      }
-      .hero h1{
-        font-size:32px;
-      }
-      .section-head h2{
-        font-size:30px;
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="topbar">
-    <div class="container wrap">
-      <div>Rus Overseas | B2B Partnership Program for Medical Admissions in Russia</div>
-      <div>Website: www.rusoverseas.com | Email: info@rusoverseas.com</div>
-    </div>
-  </div>
-
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">B2B Collaboration Opportunity</div>
-        <h1>Grow Your Consultancy with Trusted Russia Medical Admission Partnerships</h1>
-        <p>
-          Partner with Rus Overseas to access direct university collaboration support, admission guidance,
-          partner-ready marketing materials, counselling assistance, and transparent student processing.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#partner-form" class="btn btn-primary">Become a Partner</a>
-          <a href="#universities" class="btn btn-outline">View Universities</a>
-        </div>
-
-        <div class="hero-points">
-          <span>Direct support</span>
-          <span>Transparent process</span>
-          <span>Dedicated relationship manager</span>
-          <span>Marketing & counselling support</span>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">RO</div>
+        <div>
+          Rus Overseas<br>
+          <span style="font-weight:500; color:#5f6b85; font-size:13px;">Russia Jobs & Overseas Opportunities</span>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>Why consultancies join us</h3>
-        <div class="hero-stat"><span>University coordination</span><strong>Direct support</strong></div>
-        <div class="hero-stat"><span>Admission assistance</span><strong>End-to-end</strong></div>
-        <div class="hero-stat"><span>Partner resources</span><strong>Creative + PDF + counselling</strong></div>
-        <div class="hero-stat"><span>Relationship management</span><strong>India + Russia coordination</strong></div>
-        <div class="hero-stat"><span>Partner onboarding</span><strong>Fast response</strong></div>
+      <div class="nav-actions">
+        <a href="#vacancy" class="btn btn-outline">View Vacancy | नौकरी देखें</a>
+        <a href="#apply" class="btn btn-primary">Apply Now | अभी आवेदन करें</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="benefits">
-    <div class="container">
-      <div class="section-head">
-        <h2>Why Partner with Rus Overseas</h2>
-        <p>
-          We help consultancies across India expand their student admission business with structured support,
-          reliable coordination, and strong institutional backing.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="icon">🤝</div>
-          <h3>Strong University Network</h3>
-          <p>Access dependable admission support and established university collaborations across Russia.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">💰</div>
-          <h3>Attractive Commissions</h3>
-          <p>Earn competitive commissions and performance-based incentives on successful admissions.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🎓</div>
-          <h3>Training & Counselling Support</h3>
-          <p>Get updated guidance, counselling assistance, and partner support for smooth student conversion.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">📣</div>
-          <h3>Premium Marketing Materials</h3>
-          <p>Receive brochures, PDFs, creatives, reels, and ready-to-use promotional material for outreach.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">👤</div>
-          <h3>Dedicated Relationship Manager</h3>
-          <p>Receive one-to-one assistance from first inquiry to final admission and onboarding.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🔍</div>
-          <h3>Transparency & Trust</h3>
-          <p>Work through a genuine process with verifiable support and clear communication at every stage.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="universities">
-    <div class="container">
-      <div class="section-head">
-        <h2>Universities Available for Partnership</h2>
-        <p>
-          Current university options available through Rus Overseas. Latest fee sheets, intake guidance,
-          and partner support details are shared during onboarding discussions.
-        </p>
-      </div>
-
-      <div class="universities-grid">
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80)" alt="University campus">
-          <div class="uni-content">
-            <div class="uni-badge">Russia Partnership Option</div>
-            <h3>Sevastopol State University</h3>
-            <div class="uni-location">Sevastopol</div>
-            <p>Recognized university option with international admissions visibility and structured intake support.</p>
-            <div class="uni-fee">Estimated first-year expense in your PDF: 414,500 RUB</div>
-          </div>
-        </div>
-
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80)" alt="Medical university campus">
-          <div class="uni-content">
-            <div class="uni-badge">Medical University</div>
-            <h3>Kemerovo State Medical University</h3>
-            <div class="uni-location">Kemerovo</div>
-            <p>Medical-focused option for partners looking to expand Russia MBBS admissions opportunities.</p>
-            <div class="uni-fee">Estimated first-year expense in your PDF: 472,000 RUB</div>
-          </div>
-        </div>
-
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80)" alt="Students on campus">
-          <div class="uni-content">
-            <div class="uni-badge">Established Medical Institution</div>
-            <h3>Siberian State Medical University</h3>
-            <div class="uni-location">Tomsk</div>
-            <p>One of the older and widely known medical institutions in Russia with international appeal.</p>
-            <div class="uni-fee">Fee sheet available on request</div>
-          </div>
-        </div>
-
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80)" alt="University building">
-          <div class="uni-content">
-            <div class="uni-badge">Federal University</div>
-            <h3>North Caucasus Federal University</h3>
-            <div class="uni-location">Stavropol</div>
-            <p>Federal university option suited for consultancies seeking diversified Russia admission choices.</p>
-            <div class="uni-fee">Estimated first-year expense in your PDF: 387,000 RUB</div>
-          </div>
-        </div>
-
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80)" alt="Campus exterior">
-          <div class="uni-content">
-            <div class="uni-badge">Regional University Option</div>
-            <h3>Chechen State University</h3>
-            <div class="uni-location">Grozny</div>
-            <p>Another available partnership option for consultants serving MBBS aspirants across regions.</p>
-            <div class="uni-fee">Estimated first-year expense in your PDF: 453,000 RUB</div>
-          </div>
-        </div>
-
-        <div class="uni-card">
-          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80)" alt="Modern university campus">
-          <div class="uni-content">
-            <div class="uni-badge">Premium Federal University</div>
-            <h3>Far Eastern Federal University</h3>
-            <div class="uni-location">Vladivostok</div>
-            <p>Well-known federal university option with strong branding and attractive positioning for students.</p>
-            <div class="uni-fee">Estimated first-year expense in your PDF: 593,000 RUB</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="disclaimer">
-        Important: Replace placeholder images with official university or properly licensed images before publishing.
-        Reconfirm every fee, intake, hostel, and expense detail before running ads.
-      </div>
-    </div>
-  </section>
-
-  <section class="process">
-    <div class="container">
-      <div class="section-head">
-        <h2>How the Partnership Works</h2>
-        <p>
-          A simple, structured process designed to help your consultancy start referring students confidently.
-        </p>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Submit Inquiry</h3>
-          <p>Share your consultancy profile and partnership interest.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Connect with Our Team</h3>
-          <p>Discuss your region, student base, and university interests.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Get Onboarded</h3>
-          <p>Receive partner guidance, marketing materials, and admission updates.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Start Referrals</h3>
-          <p>Begin sending qualified student leads for admissions support.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <h3>Grow with Support</h3>
-          <p>Scale your admissions business with continued coordination and assistance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="trust-strip">
-        <div class="trust-item">
-          <h3>B2B Focus</h3>
-          <p>Built for consultancies, admission advisors, and student recruitment partners.</p>
-        </div>
-        <div class="trust-item">
-          <h3>Russia Expertise</h3>
-          <p>Admission coordination support tailored to Russian medical education pathways.</p>
-        </div>
-        <div class="trust-item">
-          <h3>Partner Resources</h3>
-          <p>Receive brochures, creatives, PDFs, and counselling assistance.</p>
-        </div>
-        <div class="trust-item">
-          <h3>Direct Contacts</h3>
-          <p>Quick communication with India and Russia coordination points.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="form-section" id="partner-form">
-    <div class="container">
-      <div class="section-head">
-        <h2>Start Your Partnership Inquiry</h2>
-        <p>
-          Share your details and our team will contact you with partnership information,
-          university options, and onboarding guidance.
-        </p>
-      </div>
-
-      <div class="form-wrap">
-        <div class="contact-card">
-          <h3>Contact Rus Overseas</h3>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">New Opening | नया अवसर in Siberia, Russia</div>
+          <h1>Experienced Tailor Vacancy<br>साइबेरिया, रूस में <span style="color:#0d6efd;">अनुभवी Tailor</span> की भर्ती</h1>
           <p>
-            Connect directly with our admissions and B2B collaboration team for partnership discussions.
+            Rus Overseas brings a new overseas job opportunity for skilled and experienced tailors who want stable income, international work exposure, and fully supported factory employment in Russia.
+            यह अवसर उन उम्मीदवारों के लिए है जो garment factory experience रखते हैं और विदेश में सुरक्षित एवं व्यवस्थित नौकरी चाहते हैं।
           </p>
-
-          <ul class="contact-list">
-            <li><strong>Website:</strong> www.rusoverseas.com</li>
-            <li><strong>Email:</strong> info@rusoverseas.com</li>
-            <li><strong>Dr. Vikas Kumar:</strong> +7 952 435 5636</li>
-            <li><strong>Anil Kashyap:</strong> +91 98973 13521</li>
-          </ul>
-
-          <div class="disclaimer">
-            Tip: Add your WhatsApp button here in systeme.io for faster partner response and follow-up.
+          <div class="nav-actions">
+            <a href="#benefits" class="btn btn-primary">See Benefits | फायदे देखें</a>
+            <a href="#apply" class="btn btn-outline">Contact for Selection | चयन हेतु संपर्क</a>
           </div>
         </div>
 
-        <div class="form-card">
-          <form action="#" method="post">
-            <div class="row-2">
-              <input type="text" name="full_name" placeholder="Full Name" required>
-              <input type="text" name="consultancy_name" placeholder="Consultancy Name" required>
+        <div class="hero-card">
+          <div class="salary-box">
+            <span class="salary-tag">Urgent Hiring | तुरंत भर्ती</span>
+            <div class="salary-big">85,000 Rubles<br>1,07,000 INR</div>
+            <div class="salary-sub">
+              Monthly Salary | मासिक वेतन<br>
+              Garment Factory Job in Siberia, Russia | साइबेरिया, रूस में Garment Factory Job
             </div>
+          </div>
 
-            <div class="row-2">
-              <input type="email" name="email" placeholder="Email Address" required>
-              <input type="tel" name="phone" placeholder="Mobile Number / WhatsApp" required>
+          <div class="stats">
+            <div class="stat">
+              <h3>200</h3>
+              <p>Total Vacancy<br>कुल पद</p>
             </div>
-
-            <div class="row-2">
-              <input type="text" name="city_state" placeholder="City / State">
-              <select name="monthly_volume">
-                <option value="">Approx. Monthly Student Leads</option>
-                <option>1-10</option>
-                <option>11-25</option>
-                <option>26-50</option>
-                <option>51+</option>
-              </select>
+            <div class="stat">
+              <h3>6 Days</h3>
+              <p>Working Week<br>कार्य सप्ताह</p>
             </div>
+            <div class="stat">
+              <h3>9 Hours</h3>
+              <p>Per Day<br>प्रतिदिन</p>
+            </div>
+          </div>
 
-            <select name="interest_university">
-              <option value="">Interested University / Universities</option>
-              <option>Sevastopol State University</option>
-              <option>Kemerovo State Medical University</option>
-              <option>Siberian State Medical University</option>
-              <option>North Caucasus Federal University</option>
-              <option>Chechen State University</option>
-              <option>Far Eastern Federal University</option>
-              <option>Multiple Universities</option>
-            </select>
-
-            <textarea name="message" placeholder="Tell us about your consultancy, target cities, and student volume"></textarea>
-
-            <button type="submit" class="btn btn-primary" style="width:100%;">Submit Partnership Inquiry</button>
-          </form>
+          <p class="note">
+            Suitable for experienced tailoring candidates with garment factory skills.
+            अनुभवी stitching / sewing / production candidates के लिए उपयुक्त।
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="vacancy">
+      <div class="container">
+        <h2 class="section-title">Vacancy Details | नौकरी का विवरण</h2>
+        <p class="section-sub">
+          Below are the main points of the job opening for candidates interested in Russia factory employment.
+          नीचे इस vacancy की प्रमुख जानकारी सरल bilingual format में दी गई है।
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Job Information | पद की जानकारी</h3>
+            <ul class="list">
+              <li><span class="icon">🧵</span><span><strong>Position:</strong> Experienced Tailor | अनुभवी दर्जी / Tailor</span></li>
+              <li><span class="icon">📍</span><span><strong>Location:</strong> Siberia, Russia | साइबेरिया, रूस</span></li>
+              <li><span class="icon">🏭</span><span><strong>Industry:</strong> Garment Factory | वस्त्र / Garment Factory</span></li>
+              <li><span class="icon">👥</span><span><strong>Total Openings:</strong> 200 Vacancies | 200 पद</span></li>
+              <li><span class="icon">💰</span><span><strong>Salary:</strong> 85,000 Rubles | 1,07,000 INR</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Work Terms | कार्य शर्तें</h3>
+            <ul class="list">
+              <li><span class="icon">📅</span><span><strong>Working Days:</strong> 6 days per week | 6 दिन कार्य</span></li>
+              <li><span class="icon">🌙</span><span><strong>Weekly Off:</strong> 1 day off per week | 1 दिन साप्ताहिक अवकाश</span></li>
+              <li><span class="icon">⏰</span><span><strong>Duty Hours:</strong> 9 hours per day | प्रतिदिन 9 घंटे</span></li>
+              <li><span class="icon">🌍</span><span><strong>Exposure:</strong> International work experience | अंतर्राष्ट्रीय कार्य अनुभव</span></li>
+              <li><span class="icon">📈</span><span><strong>Opportunity:</strong> Professional growth in overseas factory environment | विदेश में विकास का अवसर</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <h2 class="section-title">Facilities & Benefits | सुविधाएँ और फायदे</h2>
+        <p class="section-sub">
+          This job includes major support facilities that make relocation easier and more comfortable for Indian workers.
+          यह vacancy Indian workers के लिए supportive environment और basic facilities के साथ आती है।
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="emoji">🍛</div>
+            <h4>Indian Meals | भारतीय खाना</h4>
+            <p>3 meals per day provided. दिन में 3 समय भोजन उपलब्ध रहेगा।</p>
+          </div>
+
+          <div class="benefit">
+            <div class="emoji">🏥</div>
+            <h4>Health Insurance | स्वास्थ्य बीमा</h4>
+            <p>Comprehensive medical coverage. व्यापक स्वास्थ्य सुरक्षा उपलब्ध।</p>
+          </div>
+
+          <div class="benefit">
+            <div class="emoji">🏠</div>
+            <h4>Accommodation | आवास</h4>
+            <p>Fully provided by employer. रहने की सुविधा पूरी तरह प्रदान की जाएगी।</p>
+          </div>
+
+          <div class="benefit">
+            <div class="emoji">👥</div>
+            <h4>Indian Community | भारतीय समुदाय</h4>
+            <p>Existing Indian workers already available. वहाँ भारतीय workers पहले से कार्यरत हैं।</p>
+          </div>
+
+          <div class="benefit">
+            <div class="emoji">⏰</div>
+            <h4>Work Schedule | कार्य अनुसूची</h4>
+            <p>6 working days with 1 weekly off. 6 दिन काम, 1 दिन छुट्टी।</p>
+          </div>
+
+          <div class="benefit">
+            <div class="emoji">💼</div>
+            <h4>Professional Growth | व्यावसायिक विकास</h4>
+            <p>International factory experience adds career value. विदेश अनुभव से career profile मजबूत होती है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="highlight-banner">
+          <div>
+            <h3>Why this job is attractive | यह नौकरी क्यों खास है</h3>
+            <p>
+              Good monthly salary, Indian food, accommodation, health coverage, and existing Indian community make this a practical overseas opportunity for experienced garment workers.
+              अच्छी salary और support facilities के कारण यह experienced tailors के लिए strong option है।
+            </p>
+          </div>
+          <div class="badge-stack">
+            <span class="soft-badge">85,000 Rubles Salary</span>
+            <span class="soft-badge">1,07,000 INR</span>
+            <span class="soft-badge">200 Vacancies</span>
+            <span class="soft-badge">Indian Food</span>
+            <span class="soft-badge">Accommodation</span>
+            <span class="soft-badge">Health Insurance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h3>Apply for Selection | चयन हेतु आवेदन करें</h3>
+          <p>
+            If you have tailoring experience and want to work in Russia, this opening can be presented with direct vacancy details, salary, and support benefits in a clear format for candidates.
+            यदि आपके पास tailoring experience है, तो यह vacancy overseas placement के लिए उपयुक्त अवसर हो सकती है।
+          </p>
+          <div class="nav-actions" style="justify-content:center;">
+            <a href="https://www.rusoverseas.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Rus Overseas</a>
+            <a href="mailto:info@rusoverseas.com" class="btn btn-outline">Email for Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="container wrap">
-      <div>© Rus Overseas | Partnership Funnel</div>
-      <div>Medical Admissions in Russia | B2B Collaboration | www.rusoverseas.com</div>
+    <div class="container">
+      © Rus Overseas | Overseas Job Opportunity Page for Experienced Tailor Vacancy in Siberia, Russia
     </div>
   </footer>
-
 </body>
 </html>
