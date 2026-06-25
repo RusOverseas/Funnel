@@ -1,763 +1,734 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mining Opportunities in Russia - Eastern Siberia</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navbar */
-        nav {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f4a261;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        nav a:hover {
-            color: #f4a261;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(20px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            animation: slideDown 0.8s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .company-badge {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            margin: 1rem 0;
-            font-weight: bold;
-            border: 2px solid white;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 4rem 2rem;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #f4a261;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .benefit-card {
-            background: rgba(244, 162, 97, 0.1);
-            border-left: 4px solid #f4a261;
-            padding: 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            background: rgba(244, 162, 97, 0.2);
-            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.1);
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card h3 {
-            color: #f4a261;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        /* Positions Section */
-        .positions {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
-        }
-
-        .positions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .position-card {
-            background: linear-gradient(135deg, rgba(244, 162, 97, 0.15) 0%, rgba(231, 111, 81, 0.1) 100%);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .position-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.2);
-        }
-
-        .position-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .position-content {
-            padding: 2rem;
-        }
-
-        .position-title {
-            font-size: 1.4rem;
-            color: #f4a261;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .position-count {
-            background: rgba(231, 111, 81, 0.3);
-            color: #f4a261;
-            display: inline-block;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .position-card p {
-            color: #e0e0e0;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .position-specs {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: #f4a261;
-        }
-
-        /* Requirements Section */
-        .requirements {
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-        }
-
-        .requirements-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .requirements-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .requirement-item {
-            background: rgba(244, 162, 97, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #e76f51;
-        }
-
-        .requirement-item h3 {
-            color: #f4a261;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .requirement-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .requirement-item li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #e0e0e0;
-        }
-
-        .requirement-item li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #f4a261;
-            font-weight: bold;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .cta h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #e76f51;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #e76f51;
-        }
-
-        /* Salary Info */
-        .salary-box {
-            background: rgba(244, 162, 97, 0.2);
-            border: 2px solid #f4a261;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-
-        .salary-box h3 {
-            color: #f4a261;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .salary-amount {
-            font-size: 2.5rem;
-            color: #f4a261;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 2rem;
-            text-align: center;
-            color: #999;
-            border-top: 2px solid #f4a261;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-
-            .requirements-content {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        /* Scroll Animation */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .region-badge {
-            display: inline-block;
-            background: #e76f51;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        .total-positions {
-            background: rgba(244, 162, 97, 0.15);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-            border: 2px dashed #f4a261;
-        }
-
-        .total-positions h3 {
-            color: #f4a261;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .total-positions .number {
-            font-size: 3rem;
-            color: #f4a261;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rus Overseas Partnership Program</title>
+  <style>
+    :root{
+      --primary:#0f3d91;
+      --secondary:#e63946;
+      --accent:#f4f7fb;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --white:#ffffff;
+      --success:#0f766e;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:999px;
+      font-weight:700;
+      transition:0.25s ease;
+      border:2px solid transparent;
+    }
+    .btn-primary{
+      background:var(--secondary);
+      color:#fff;
+    }
+    .btn-primary:hover{transform:translateY(-2px);opacity:.95}
+    .btn-outline{
+      background:transparent;
+      color:#fff;
+      border-color:#fff;
+    }
+    .btn-outline:hover{
+      background:#fff;
+      color:var(--primary);
+    }
+
+    .topbar{
+      background:var(--primary);
+      color:#fff;
+      padding:14px 0;
+      font-size:14px;
+    }
+    .topbar .wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(15,61,145,.78), rgba(15,61,145,.82)),
+        url('[images.unsplash.com](https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80)') center/cover no-repeat;
+      color:#fff;
+      padding:90px 0 80px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.4px;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      font-size:50px;
+      line-height:1.1;
+      margin:0 0 18px;
+    }
+    .hero p{
+      font-size:18px;
+      color:#eef4ff;
+      margin:0 0 28px;
+      max-width:700px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:15px;
+      color:#dbe7ff;
+    }
+    .hero-card{
+      background:rgba(255,255,255,.1);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .hero-card h3{
+      margin-top:0;
+      font-size:24px;
+    }
+    .hero-stat{
+      display:flex;
+      justify-content:space-between;
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,.15);
+      font-size:15px;
+    }
+    .hero-stat:last-child{border-bottom:none}
+
+    section{
+      padding:70px 0;
+    }
+    .section-head{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto 40px;
+    }
+    .section-head h2{
+      font-size:38px;
+      margin:0 0 12px;
+      color:var(--primary);
+    }
+    .section-head p{
+      color:var(--muted);
+      margin:0;
+      font-size:17px;
+    }
+
+    .benefits{
+      background:var(--accent);
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:24px;
+    }
+    .card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
+    .icon{
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      background:#eef4ff;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      margin-bottom:18px;
+    }
+    .card h3{
+      margin:0 0 12px;
+      font-size:22px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .universities-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:24px;
+    }
+    .uni-card{
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .uni-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+    .uni-content{
+      padding:22px;
+    }
+    .uni-badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eef4ff;
+      color:var(--primary);
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .uni-content h3{
+      margin:0 0 8px;
+      font-size:22px;
+      line-height:1.25;
+    }
+    .uni-location{
+      color:var(--success);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .uni-content p{
+      color:var(--muted);
+      margin:0 0 14px;
+      font-size:15px;
+    }
+    .uni-fee{
+      font-weight:700;
+      color:var(--secondary);
+      margin-bottom:14px;
+    }
+
+    .process{
+      background:linear-gradient(180deg,#fff,#f8fbff);
+    }
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:20px;
+    }
+    .step{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:24px 18px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .step-num{
+      width:52px;
+      height:52px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      background:var(--primary);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+    }
+
+    .trust-strip{
+      background:var(--primary);
+      color:#fff;
+      border-radius:24px;
+      padding:34px;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:20px;
+    }
+    .trust-item h3{
+      margin:0 0 8px;
+      font-size:26px;
+    }
+    .trust-item p{
+      margin:0;
+      color:#d7e4ff;
+      font-size:14px;
+    }
+
+    .form-section{
+      background:var(--accent);
+    }
+    .form-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:start;
+    }
+    .contact-card, .form-card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .contact-list{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+    }
+    .contact-list li{
+      margin-bottom:14px;
+      color:var(--muted);
+    }
+    .contact-list strong{
+      color:var(--text);
+    }
+
+    form{
+      display:grid;
+      gap:14px;
+    }
+    .row-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #d1d5db;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px rgba(15,61,145,.12);
+    }
+    textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    .footer{
+      background:#0b1d44;
+      color:#d8e2ff;
+      padding:26px 0;
+      font-size:14px;
+    }
+    .footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .disclaimer{
+      font-size:13px;
+      color:#6b7280;
+      background:#fff8e8;
+      border:1px solid #f6dca8;
+      padding:14px 16px;
+      border-radius:12px;
+      margin-top:18px;
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,
+      .form-wrap{
+        grid-template-columns:1fr;
+      }
+      .grid-3,
+      .universities-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+      .steps{
+        grid-template-columns:repeat(2, 1fr);
+      }
+      .trust-strip{
+        grid-template-columns:repeat(2, 1fr);
+      }
+      .hero h1{
+        font-size:40px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .grid-3,
+      .universities-grid,
+      .steps,
+      .trust-strip,
+      .row-2{
+        grid-template-columns:1fr;
+      }
+      .hero{
+        padding:70px 0 60px;
+      }
+      .hero h1{
+        font-size:32px;
+      }
+      .section-head h2{
+        font-size:30px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo">🏭 Mining Careers Russia</div>
-            <ul>
-                <li><a onclick="scrollToSection('positions')">Positions</a></li>
-                <li><a onclick="scrollToSection('benefits')">Benefits</a></li>
-                <li><a onclick="scrollToSection('requirements')">Requirements</a></li>
-                <li><a onclick="scrollToSection('apply')">Apply Now</a></li>
-            </ul>
+
+  <div class="topbar">
+    <div class="container wrap">
+      <div>Rus Overseas | B2B Partnership Program for Medical Admissions in Russia</div>
+      <div>Website: www.rusoverseas.com | Email: info@rusoverseas.com</div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">B2B Collaboration Opportunity</div>
+        <h1>Grow Your Consultancy with Trusted Russia Medical Admission Partnerships</h1>
+        <p>
+          Partner with Rus Overseas to access direct university collaboration support, admission guidance,
+          partner-ready marketing materials, counselling assistance, and transparent student processing.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#partner-form" class="btn btn-primary">Become a Partner</a>
+          <a href="#universities" class="btn btn-outline">View Universities</a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1617957718645-7680362d2c49?w=1600') center/cover; background-attachment: fixed;">
-        <div class="hero-content">
-            <h1>🚀 Mining Opportunities in Eastern Siberia</h1>
-            <p>Join a Leading Mining Operation with Competitive Benefits & Career Growth</p>
-            <div class="company-badge">Premium Mining Opportunities</div>
-            <div class="region-badge">📍 Eastern Siberia | Rotational Method</div>
+        <div class="hero-points">
+          <span>Direct support</span>
+          <span>Transparent process</span>
+          <span>Dedicated relationship manager</span>
+          <span>Marketing & counselling support</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Benefits Section -->
-    <section class="benefits" id="benefits" style="background: linear-gradient(rgba(15,52,96,0.95), rgba(22,33,62,0.95)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600') center/cover; background-attachment: fixed;">
-        <div class="container">
-            <h2>💰 Why Join Us?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">💵</div>
-                    <h3>Excellent Salary</h3>
-                    <p>2,30,000 Rubles per month (approximately 2,800 USD)</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🏠</div>
-                    <h3>Free Accommodation</h3>
-                    <p>Fully provided by the company for all employees</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">⚕️</div>
-                    <h3>Medical Insurance</h3>
-                    <p>Comprehensive health coverage included</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🍳</div>
-                    <h3>Kitchen Facilities</h3>
-                    <p>Equipped kitchen for self-cooking meals</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">⏰</div>
-                    <h3>Work Schedule</h3>
-                    <p>10 hours/day, 6 days per week (Rotational)</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Career Growth</h3>
-                    <p>Opportunities for advancement in mining sector</p>
-                </div>
-            </div>
+      <div class="hero-card">
+        <h3>Why consultancies join us</h3>
+        <div class="hero-stat"><span>University coordination</span><strong>Direct support</strong></div>
+        <div class="hero-stat"><span>Admission assistance</span><strong>End-to-end</strong></div>
+        <div class="hero-stat"><span>Partner resources</span><strong>Creative + PDF + counselling</strong></div>
+        <div class="hero-stat"><span>Relationship management</span><strong>India + Russia coordination</strong></div>
+        <div class="hero-stat"><span>Partner onboarding</span><strong>Fast response</strong></div>
+      </div>
+    </div>
+  </section>
 
-            <div class="salary-box">
-                <h3>Monthly Salary Package</h3>
-                <div class="salary-amount">230,000 ₽</div>
-                <p style="margin-top: 1rem; color: #e0e0e0;">2,30,000 Rubles | Approximately 2,800 USD | All-Inclusive Package</p>
-            </div>
+  <section class="benefits">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Partner with Rus Overseas</h2>
+        <p>
+          We help consultancies across India expand their student admission business with structured support,
+          reliable coordination, and strong institutional backing.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Strong University Network</h3>
+          <p>Access dependable admission support and established university collaborations across Russia.</p>
         </div>
-    </section>
 
-    <!-- Positions Section -->
-    <section class="positions" id="positions">
-        <div class="container">
-            <h2>⚙️ Available Positions</h2>
-            
-            <div class="total-positions">
-                <h3>Total Openings</h3>
-                <div class="number">80</div>
-                <p>Professional mining equipment operators needed immediately</p>
-            </div>
-
-            <!-- Mining Site Overview -->
-            <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.4); margin: 3rem 0;">
-                <img src="https://images.unsplash.com/photo-1617957718645-7680362d2c49?w=1600" alt="Mining Site in Russia" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 2rem; color: white;">
-                    <h3 style="margin: 0 0 1rem 0; font-size: 1.8rem; color: #f4a261;">⛏️ Eastern Siberia Mining Operations</h3>
-                    <p style="margin: 0; font-size: 1.1rem; opacity: 0.95;">Modern mining facilities with state-of-the-art equipment and international workforce. Join our team operating premium heavy machinery in Russia's thriving mining sector.</p>
-                </div>
-            </div>
-
-            <div class="positions-grid">
-                <!-- BELAZ Dump Truck -->
-                <div class="position-card fade-in">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/082210335e8b72394e979d031b4892d69456580b.jpg" alt="BELAZ Dump Truck" class="position-image">
-                    <div class="position-content">
-                        <div class="position-title">🚛 BELAZ Dump Truck Driver</div>
-                        <span class="position-count">20 Positions</span>
-                        <p>Operate heavy-duty mining dump trucks for ore transportation</p>
-                        <div class="position-specs">
-                            <strong>Equipment:</strong> BELAZ 40–45 tons<br>
-                            <strong>Load Capacity:</strong> 40-45 metric tons<br>
-                            <strong>Experience Required:</strong> Proven heavy truck driving experience
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Komatsu Excavator -->
-                <div class="position-card fade-in">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/3c8f4e5a8b9c7d2f1e6a4b8c9d7e5f3a2b1c4d6e.jpg" alt="Komatsu PC400 Excavator" class="position-image">
-                    <div class="position-content">
-                        <div class="position-title">🏗️ Excavator Operator</div>
-                        <span class="position-count">20 Positions</span>
-                        <p>Expert excavation operations for ore extraction and site preparation</p>
-                        <div class="position-specs">
-                            <strong>Equipment:</strong> Komatsu PC400<br>
-                            <strong>Bucket Capacity:</strong> 2.4 cubic meters<br>
-                            <strong>Experience Required:</strong> Heavy equipment operation
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LiuGong Bulldozer -->
-                <div class="position-card fade-in">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/888714dc58693218ab45d52272a32d54935388f9.jpg" alt="LiuGong Bulldozer" class="position-image">
-                    <div class="position-content">
-                        <div class="position-title">🚜 Bulldozer Operator</div>
-                        <span class="position-count">20 Positions</span>
-                        <p>Site preparation, earthmoving, and terrain leveling operations</p>
-                        <div class="position-specs">
-                            <strong>Equipment:</strong> LiuGong Bulldozer<br>
-                            <strong>Power:</strong> High-performance heavy-duty blade<br>
-                            <strong>Experience Required:</strong> Earthmoving experience
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Komatsu Front Loader -->
-                <div class="position-card fade-in">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/3d6ef3d8b8c54acc60e1a439150d981f65a38022.jpg" alt="Komatsu Front Loader" class="position-image">
-                    <div class="position-content">
-                        <div class="position-title">⚒️ Front Loader Driver</div>
-                        <span class="position-count">20 Positions</span>
-                        <p>Material handling and loading operations at the mining site</p>
-                        <div class="position-specs">
-                            <strong>Equipment:</strong> Komatsu WA400<br>
-                            <strong>Bucket Capacity:</strong> 3.0 cubic meters<br>
-                            <strong>Experience Required:</strong> Loader operation experience
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <div class="icon">💰</div>
+          <h3>Attractive Commissions</h3>
+          <p>Earn competitive commissions and performance-based incentives on successful admissions.</p>
         </div>
-    </section>
 
-    <!-- Requirements Section -->
-    <section class="requirements" id="requirements">
-        <div class="container">
-            <h2>✅ Candidate Requirements & Qualifications</h2>
-            
-            <div class="requirements-content">
-                <div>
-                    <div class="requirement-item">
-                        <h3>📋 Experience Requirements</h3>
-                        <ul>
-                            <li>Practical work experience on heavy mining or earth-moving equipment</li>
-                            <li>Experience with similar equipment is acceptable</li>
-                            <li>Proven track record in mining or construction sector</li>
-                            <li>Valid operator certifications (if available)</li>
-                        </ul>
-                    </div>
-                    <div class="requirement-item" style="margin-top: 1.5rem;">
-                        <h3>📸 Qualification Proof</h3>
-                        <ul>
-                            <li>Submit detailed resume with work history</li>
-                            <li>Provide photos/videos demonstrating your experience</li>
-                            <li>Include qualification documents and certificates</li>
-                            <li>Submit length of service records if available</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="requirement-item">
-                        <h3>🌍 Eligibility</h3>
-                        <ul>
-                            <li>Citizens of India, Bangladesh, or Nepal</li>
-                            <li>Ready for immediate commencement</li>
-                            <li>Commitment to rotational/shift method work</li>
-                            <li>Valid passport and work authorization</li>
-                        </ul>
-                    </div>
-                    <div class="requirement-item" style="margin-top: 1.5rem;">
-                        <h3>🤝 Selection Process</h3>
-                        <ul>
-                            <li>In-person selection available in your country</li>
-                            <li>Participation of company representatives from Russia</li>
-                            <li>Final approval by the employer</li>
-                            <li>Professional onboarding and training support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div style="background: rgba(244, 162, 97, 0.1); padding: 2rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #e76f51;">
-                <h3 style="color: #f4a261; margin-bottom: 1rem;">🌏 International Workforce</h3>
-                <p style="color: #e0e0e0;">We welcome experienced operators from <strong style="color: #f4a261;">India, Bangladesh, and Nepal</strong> to join our mining operations in Eastern Siberia. All candidates will receive comprehensive support throughout the recruitment and onboarding process.</p>
-            </div>
+        <div class="card">
+          <div class="icon">🎓</div>
+          <h3>Training & Counselling Support</h3>
+          <p>Get updated guidance, counselling assistance, and partner support for smooth student conversion.</p>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="apply">
-        <div class="container">
-            <h2>🚀 Ready to Join Our Team?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9);">
-                Don't miss this opportunity to work in Russia's thriving mining sector with excellent salary and benefits!
-            </p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary">📧 Apply Now</button>
-                <button class="btn btn-secondary">📞 Contact Us</button>
-            </div>
-            <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.8);">
-                Location: <strong>Eastern Siberia, Russia</strong> | Total Positions: <strong>80</strong> | Countries: <strong>India, Bangladesh, Nepal</strong>
-            </p>
+        <div class="card">
+          <div class="icon">📣</div>
+          <h3>Premium Marketing Materials</h3>
+          <p>Receive brochures, PDFs, creatives, reels, and ready-to-use promotional material for outreach.</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p><strong>Mining Opportunities in Russia</strong> - Professional Recruitment Platform</p>
-        <p>Connecting Talented Professionals from India, Bangladesh & Nepal with Opportunities in Russia</p>
-        <p>Eastern Siberia Mining Operations | Quality, Reliability, Growth</p>
-        <p style="margin-top: 1rem; font-size: 0.85rem;">© 2026 Mining Careers Russia. All Rights Reserved.</p>
-    </footer>
+        <div class="card">
+          <div class="icon">👤</div>
+          <h3>Dedicated Relationship Manager</h3>
+          <p>Receive one-to-one assistance from first inquiry to final admission and onboarding.</p>
+        </div>
 
-    <script>
-        // Smooth scroll functionality
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+        <div class="card">
+          <div class="icon">🔍</div>
+          <h3>Transparency & Trust</h3>
+          <p>Work through a genuine process with verifiable support and clear communication at every stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <section id="universities">
+    <div class="container">
+      <div class="section-head">
+        <h2>Universities Available for Partnership</h2>
+        <p>
+          Current university options available through Rus Overseas. Latest fee sheets, intake guidance,
+          and partner support details are shared during onboarding discussions.
+        </p>
+      </div>
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                }
-            });
-        }, observerOptions);
+      <div class="universities-grid">
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80)" alt="University campus">
+          <div class="uni-content">
+            <div class="uni-badge">Russia Partnership Option</div>
+            <h3>Sevastopol State University</h3>
+            <div class="uni-location">Sevastopol</div>
+            <p>Recognized university option with international admissions visibility and structured intake support.</p>
+            <div class="uni-fee">Estimated first-year expense in your PDF: 414,500 RUB</div>
+          </div>
+        </div>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
-        });
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80)" alt="Medical university campus">
+          <div class="uni-content">
+            <div class="uni-badge">Medical University</div>
+            <h3>Kemerovo State Medical University</h3>
+            <div class="uni-location">Kemerovo</div>
+            <p>Medical-focused option for partners looking to expand Russia MBBS admissions opportunities.</p>
+            <div class="uni-fee">Estimated first-year expense in your PDF: 472,000 RUB</div>
+          </div>
+        </div>
 
-        // Button interactions
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Thank you for your interest!\n\nPlease contact your recruitment agency for more details.\n\n📧 Email your resume with experience proof (photos/videos)\n📱 Include contact details\n\nWe look forward to reviewing your application!');
-            });
-        });
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80)" alt="Students on campus">
+          <div class="uni-content">
+            <div class="uni-badge">Established Medical Institution</div>
+            <h3>Siberian State Medical University</h3>
+            <div class="uni-location">Tomsk</div>
+            <p>One of the older and widely known medical institutions in Russia with international appeal.</p>
+            <div class="uni-fee">Fee sheet available on request</div>
+          </div>
+        </div>
 
-        // Scroll reveal animation
-        window.addEventListener('scroll', function() {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
-                    el.style.animation = 'fadeInUp 0.8s ease forwards';
-                }
-            });
-        });
-    </script>
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80)" alt="University building">
+          <div class="uni-content">
+            <div class="uni-badge">Federal University</div>
+            <h3>North Caucasus Federal University</h3>
+            <div class="uni-location">Stavropol</div>
+            <p>Federal university option suited for consultancies seeking diversified Russia admission choices.</p>
+            <div class="uni-fee">Estimated first-year expense in your PDF: 387,000 RUB</div>
+          </div>
+        </div>
+
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80)" alt="Campus exterior">
+          <div class="uni-content">
+            <div class="uni-badge">Regional University Option</div>
+            <h3>Chechen State University</h3>
+            <div class="uni-location">Grozny</div>
+            <p>Another available partnership option for consultants serving MBBS aspirants across regions.</p>
+            <div class="uni-fee">Estimated first-year expense in your PDF: 453,000 RUB</div>
+          </div>
+        </div>
+
+        <div class="uni-card">
+          <img src="[images.unsplash.com](https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1200&q=80)" alt="Modern university campus">
+          <div class="uni-content">
+            <div class="uni-badge">Premium Federal University</div>
+            <h3>Far Eastern Federal University</h3>
+            <div class="uni-location">Vladivostok</div>
+            <p>Well-known federal university option with strong branding and attractive positioning for students.</p>
+            <div class="uni-fee">Estimated first-year expense in your PDF: 593,000 RUB</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        Important: Replace placeholder images with official university or properly licensed images before publishing.
+        Reconfirm every fee, intake, hostel, and expense detail before running ads.
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-head">
+        <h2>How the Partnership Works</h2>
+        <p>
+          A simple, structured process designed to help your consultancy start referring students confidently.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Submit Inquiry</h3>
+          <p>Share your consultancy profile and partnership interest.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Connect with Our Team</h3>
+          <p>Discuss your region, student base, and university interests.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Get Onboarded</h3>
+          <p>Receive partner guidance, marketing materials, and admission updates.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Start Referrals</h3>
+          <p>Begin sending qualified student leads for admissions support.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <h3>Grow with Support</h3>
+          <p>Scale your admissions business with continued coordination and assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-item">
+          <h3>B2B Focus</h3>
+          <p>Built for consultancies, admission advisors, and student recruitment partners.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Russia Expertise</h3>
+          <p>Admission coordination support tailored to Russian medical education pathways.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Partner Resources</h3>
+          <p>Receive brochures, creatives, PDFs, and counselling assistance.</p>
+        </div>
+        <div class="trust-item">
+          <h3>Direct Contacts</h3>
+          <p>Quick communication with India and Russia coordination points.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="partner-form">
+    <div class="container">
+      <div class="section-head">
+        <h2>Start Your Partnership Inquiry</h2>
+        <p>
+          Share your details and our team will contact you with partnership information,
+          university options, and onboarding guidance.
+        </p>
+      </div>
+
+      <div class="form-wrap">
+        <div class="contact-card">
+          <h3>Contact Rus Overseas</h3>
+          <p>
+            Connect directly with our admissions and B2B collaboration team for partnership discussions.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>Website:</strong> www.rusoverseas.com</li>
+            <li><strong>Email:</strong> info@rusoverseas.com</li>
+            <li><strong>Dr. Vikas Kumar:</strong> +7 952 435 5636</li>
+            <li><strong>Anil Kashyap:</strong> +91 98973 13521</li>
+          </ul>
+
+          <div class="disclaimer">
+            Tip: Add your WhatsApp button here in systeme.io for faster partner response and follow-up.
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form action="#" method="post">
+            <div class="row-2">
+              <input type="text" name="full_name" placeholder="Full Name" required>
+              <input type="text" name="consultancy_name" placeholder="Consultancy Name" required>
+            </div>
+
+            <div class="row-2">
+              <input type="email" name="email" placeholder="Email Address" required>
+              <input type="tel" name="phone" placeholder="Mobile Number / WhatsApp" required>
+            </div>
+
+            <div class="row-2">
+              <input type="text" name="city_state" placeholder="City / State">
+              <select name="monthly_volume">
+                <option value="">Approx. Monthly Student Leads</option>
+                <option>1-10</option>
+                <option>11-25</option>
+                <option>26-50</option>
+                <option>51+</option>
+              </select>
+            </div>
+
+            <select name="interest_university">
+              <option value="">Interested University / Universities</option>
+              <option>Sevastopol State University</option>
+              <option>Kemerovo State Medical University</option>
+              <option>Siberian State Medical University</option>
+              <option>North Caucasus Federal University</option>
+              <option>Chechen State University</option>
+              <option>Far Eastern Federal University</option>
+              <option>Multiple Universities</option>
+            </select>
+
+            <textarea name="message" placeholder="Tell us about your consultancy, target cities, and student volume"></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Submit Partnership Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container wrap">
+      <div>© Rus Overseas | Partnership Funnel</div>
+      <div>Medical Admissions in Russia | B2B Collaboration | www.rusoverseas.com</div>
+    </div>
+  </footer>
+
 </body>
 </html>
